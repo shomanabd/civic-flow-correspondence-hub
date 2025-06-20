@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,10 +12,10 @@ interface SearchProps {
 
 export const Search = ({ user }: SearchProps) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [departmentFilter, setDepartmentFilter] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
-  const [typeFilter, setTypeFilter] = useState("");
-  const [dateFilter, setDateFilter] = useState("");
+  const [departmentFilter, setDepartmentFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState("all");
+  const [typeFilter, setTypeFilter] = useState("all");
+  const [dateFilter, setDateFilter] = useState("all");
 
   const searchResults = [
     {
@@ -89,7 +88,7 @@ export const Search = ({ user }: SearchProps) => {
                 <SelectValue placeholder="All Departments" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Departments</SelectItem>
+                <SelectItem value="all">All Departments</SelectItem>
                 <SelectItem value="administration">Administration</SelectItem>
                 <SelectItem value="finance">Finance</SelectItem>
                 <SelectItem value="public-works">Public Works</SelectItem>
@@ -103,7 +102,7 @@ export const Search = ({ user }: SearchProps) => {
                 <SelectValue placeholder="All Statuses" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Statuses</SelectItem>
+                <SelectItem value="all">All Statuses</SelectItem>
                 <SelectItem value="draft">Draft</SelectItem>
                 <SelectItem value="sent">Sent</SelectItem>
                 <SelectItem value="received">Received</SelectItem>
@@ -116,7 +115,7 @@ export const Search = ({ user }: SearchProps) => {
                 <SelectValue placeholder="All Types" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Types</SelectItem>
+                <SelectItem value="all">All Types</SelectItem>
                 <SelectItem value="official-letter">Official Letter</SelectItem>
                 <SelectItem value="memo">Memorandum</SelectItem>
                 <SelectItem value="report">Report</SelectItem>
@@ -131,7 +130,7 @@ export const Search = ({ user }: SearchProps) => {
                 <SelectValue placeholder="Any Date" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Any Date</SelectItem>
+                <SelectItem value="all">Any Date</SelectItem>
                 <SelectItem value="today">Today</SelectItem>
                 <SelectItem value="week">This Week</SelectItem>
                 <SelectItem value="month">This Month</SelectItem>
