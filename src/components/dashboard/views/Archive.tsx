@@ -1,8 +1,7 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Archive as ArchiveIcon, Download, Restore } from "lucide-react";
+import { Archive as ArchiveIcon, Download, ArchiveRestore } from "lucide-react";
 
 interface ArchiveProps {
   user: any;
@@ -112,7 +111,7 @@ export const Archive = ({ user }: ArchiveProps) => {
                   </Button>
                   {user.role === "Admin" && (
                     <Button variant="outline" size="sm">
-                      <Restore className="w-4 h-4 mr-1" />
+                      <ArchiveRestore className="w-4 h-4 mr-1" />
                       Restore
                     </Button>
                   )}
